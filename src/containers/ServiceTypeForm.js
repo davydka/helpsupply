@@ -27,7 +27,6 @@ const styles = {
   }),
   showNote: css({
     display: 'block',
-    marginTop: Space.S30,
   }),
   link: css({
     alignItems: 'baseline',
@@ -57,7 +56,6 @@ export const ServiceTypeForm = ({
   const [fields, setFields] = useState({
     kind: undefined,
     urgency: undefined,
-    needsFinances: false,
     organization: '',
     zip: '',
   });
@@ -177,7 +175,6 @@ export const ServiceTypeForm = ({
   );
 
   const handleSubmit = async () => {
-    const { kind } = fields;
     setIsLoading(true);
 
     if (
@@ -197,39 +194,11 @@ export const ServiceTypeForm = ({
       backend
         .saveServiceRequest(fields)
         .then((id) => {
-          switch (kind) {
-            case RequestKinds.GROCERY:
-              history.push(
-                routeWithParams(Routes.SERVICE_GROCERIES_WHERE, {
-                  id,
-                }),
-              );
-              break;
-            case RequestKinds.CHILDCARE:
-              history.push(
-                routeWithParams(Routes.SERVICE_CHILDCARE_WHERE, {
-                  id,
-                }),
-              );
-              break;
-            case RequestKinds.PETCARE:
-              history.push(
-                routeWithParams(Routes.SERVICE_PETCARE_WHERE, {
-                  id,
-                }),
-              );
-              break;
-            case RequestKinds.MENTALHEALTH:
-              history.push(
-                routeWithParams(Routes.SERVICE_EMOTIONAL_WHEN, {
-                  id,
-                }),
-              );
-              break;
-            default:
-              history.push(routeWithParams(Routes.SERVICE_TYPE));
-              break;
-          }
+          history.push(
+            routeWithParams(Routes.SERVICE_PAYMENT, {
+              id,
+            }),
+          );
         })
         .catch((e) => {
           setError(e.message);
@@ -257,16 +226,9 @@ export const ServiceTypeForm = ({
       type: formFieldTypes.INPUT_DROPDOWN,
       value: fields.urgency,
     },
-    {
-      customOnChange: handleFieldChange('needsFinances'),
-      label: t('service.selectType.form.needsFinances'),
-      name: 'needsFinances',
-      type: formFieldTypes.INPUT_CHECKBOX,
-      value: fields.needsFinances,
-    },
   ];
 
-  const { needsFinances, ...requiredFields } = fields;
+  const { ...requiredFields } = fields;
 
   return (
     <FormBuilder

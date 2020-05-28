@@ -24,6 +24,9 @@ export const FAQ = () => {
   const nycCovidCare = `[${t(
     'learnMore.about.partners.partner3.title',
   )}](http://${t('learnMore.about.partners.partner1.url')})`;
+  const invisibleHands = `[${t(
+    'learnMore.about.partners.partner4.title',
+  )}](http://${t('learnMore.about.partners.partner4.url')})`;
 
   return (
     <div css={styles.container}>
@@ -38,18 +41,7 @@ export const FAQ = () => {
       </Text>
       <Text as="div" css={styles.answer} type={TEXT_TYPE.BODY_2}>
         <ReactMarkdown
-          renderers={{
-            root: ({ children }) => {
-              return <div>{children[0].props.children}</div>;
-            },
-            link: ({ href, children }) => {
-              return (
-                <Anchor href={href} as={anchorTypes.A} forceBlank={true}>
-                  {children}
-                </Anchor>
-              );
-            },
-          }}
+          linkTarget={'_blank'}
           source={t('learnMore.faq.answer2', {
             url: Routes.PRIVACY,
           })}
@@ -64,6 +56,7 @@ export const FAQ = () => {
             mutualAid,
             workersNeedChildcare,
             nycCovidCare,
+            invisibleHands,
           })}
         />
       </Text>

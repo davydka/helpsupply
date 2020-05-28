@@ -66,9 +66,9 @@
         "question1": "Who can request help?",
         "answer1": "Our focus is on helping anyone working for a NYC medical facility or EMS treating people suffering from COVID-19. Support staff, nurses, and doctors are all encouraged to make requests.",
         "question2": "How can I be sure that my request and information stay private?",
-        "answer2": "We share your data securely on a per-request basis with only the service organization that will fulfill your request. [Privacy policy]({{url}})",
+        "answer2": "We share your data securely on a per-request basis with only the service organization that will fulfill your request. For more details, please see our [Privacy policy]({{url}})",
         "question3": "Does Help Supply provide the volunteer services?",
-        "answer3": "No. We gather requests and then route them to the most appropriate of our partner organizations to provide volunteers to fulfill them. Our current partners include {{mutualAid}}, {{workersNeedChildcare}}, and {{nycCovidCare}}.",
+        "answer3": "No. We gather requests and then route them to the most appropriate of our partner organizations to provide volunteers to fulfill them. Our current partners include {{mutualAid}}, {{workersNeedChildcare}}, {{nycCovidCare}}, and {{invisibleHands}}.",
         "question4": "How long will I have to wait for help?",
         "answer4": "Many people are in difficult situations, and the volume of requests is high. Our partners will contact you as soon as they can.",
         "question5": "Will you expand to other cities besides NYC?",
@@ -101,6 +101,11 @@
             "title": "NYC COVID Care Network",
             "content": "Content",
             "url": "nyccovidcare.org"
+          },
+          "partner4": {
+            "title": "Invisible Hands",
+            "content": "Content",
+            "url": "invisiblehandsdeliver.org"
           }
         }
       },
@@ -226,6 +231,7 @@
     "review": {
       "title": "Review your request",
       "submit": "Submit request",
+      "paymentMethod": "Payment method",
       "serviceType": "Service type",
       "preferredTime": "Preferred time",
       "details": "details",
@@ -233,6 +239,8 @@
       "recurring": "Recurring",
       "additionalInfo": "Additional Info",
       "disclaimer": "By submitting this request you acknowledge that Help Supply assumes no liability for any services provided by volunteers.",
+      "financialHelpNeeded": "Financial help needed",
+      "financialHelpNotNeeded": "Financial help not needed",
       "grocery": {
         "location": "Delivery location",
         "contact": "Delivery contact",
@@ -297,6 +305,14 @@
         "sent": {
           "title": "We added the facility contact info",
           "buttonLabel": "Create new request"
+        }
+      },
+      "paymentForm": {
+        "title": "Select your preferred method of payment",
+        "description": "If your request requires payment (i.e., for groceries), this helps us match you with a volunteer who accepts your preferred payment method.",
+        "note": "NOTE: If you are experiencing symptoms of COVID-19, please do not pay your volunteer in cash.",
+        "labels": {
+          "payment": "Method of payment"
         }
       },
       "additionalContact": {
