@@ -8,6 +8,7 @@ node_modules/
 .idea
 .firebase/
 build/
+coverage/
 
 service-account-staging.json
 service-account.json

@@ -40,9 +40,9 @@
     "start": "REACT_APP_HOST_ENV=development react-scripts start",
     "lint": "eslint \"./src/**/*.{js,jsx}\"",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "test:app": "(firebase emulators:exec --only firestore \"yarn test --watchAll=false\") && yarn lint",
+    "test": "(firebase emulators:exec --only firestore \"yarn test:react --watchAll=false --coverage --coverageReporters=\"lcov\"\")",
     "test:emulator:start": "firebase emulators:start --only firestore",
+    "test:react": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject",
     "deploy-staging": "./scripts/deploy-staging.sh",
     "deploy-production": "./scripts/deploy-production.sh"
